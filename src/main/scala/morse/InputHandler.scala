@@ -1,0 +1,5 @@
+package morse
+
+object InputHandler {
+
+}
