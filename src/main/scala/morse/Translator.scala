@@ -2,12 +2,9 @@ package morse
 
 import morse.MorseCode.morseToEnglish
 
-object Translator extends App {
+object Translator{
 
   import morse.MorseCode.englishToMorse
-
-  val englishString:String = "HELLO HOW ARE YOU"
-  val morseString:String = ".... . .-.. .-.. --- / .... --- .-- / .- .-. . / -.-- --- ..-"
 
   def translatorEtoM(str:String):String = {
     def translatorHelper(acc:String, strLength: Int):String ={
@@ -16,7 +13,7 @@ object Translator extends App {
     }
     translatorHelper("", 0).trim
   }
-  println(translatorEtoM(englishString))
+
 
 
   def translatorMtoE(str: String): String = {
@@ -28,5 +25,5 @@ object Translator extends App {
 
     translatorHelper("", 0).trim
   }
-  println(translatorMtoE(morseString))
+
 }
