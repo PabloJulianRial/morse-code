@@ -11,6 +11,8 @@ package morse
       'U' -> "..-", 'V' -> "...-", 'W' -> ".--", 'X' -> "-..-",
       'Y' -> "-.--", 'Z' -> "--..", ' ' -> "/"
     )
+    
+    val morseToEnglish: Map[String, Char] = englishToMorse.map(x => x._2 -> x._1)
 
   }
 
