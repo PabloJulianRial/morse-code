@@ -7,14 +7,14 @@ object Translator extends App {
   import morse.MorseCode.englishToMorse
 
   val englishString:String = "HELLO HOW ARE YOU"
-  val morseString:String = ".... . .-.. .-.. --- / .... --- .-- / .- .-. . / -.-- --- ..- "
+  val morseString:String = ".... . .-.. .-.. --- / .... --- .-- / .- .-. . / -.-- --- ..-"
 
   def translatorEtoM(str:String):String = {
     def translatorHelper(acc:String, strLength: Int):String ={
       if (strLength >= str.length) acc
       else translatorHelper(acc + englishToMorse(str.charAt(strLength))  + " ", strLength + 1 )
     }
-    translatorHelper("", 0)
+    translatorHelper("", 0).trim
   }
   println(translatorEtoM(englishString))
 
@@ -26,7 +26,7 @@ object Translator extends App {
       else translatorHelper(acc + morseToEnglish(splitStr(strLength)) , strLength + 1)
     }
 
-    translatorHelper("", 0)
+    translatorHelper("", 0).trim
   }
   println(translatorMtoE(morseString))
 }
