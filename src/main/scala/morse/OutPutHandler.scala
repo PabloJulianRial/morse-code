@@ -13,7 +13,7 @@ object OutPutHandler {
     print("Select the kind of translation (1 or 2) and press ENTER: ")
 
   def promptInput(prompt: String): Unit =
-    print(prompt)
+    println(prompt)
 
   def printResult(result: String): Unit =
     println(s"\nResult: $result")

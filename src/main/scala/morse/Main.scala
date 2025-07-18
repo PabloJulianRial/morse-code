@@ -8,18 +8,18 @@ object Main extends App {
 
   printMenu()
   promptChoice()
-  val choice = readIntInput()
 
-  val inputPrompt = choice match {
+  val choice = readUntilValid(readIntInput())
+
+  val inputPrompt: String = choice match {
     case 1 => "Enter Morse code: "
     case 2 => "Enter English text: "
     case _ => throw new InvalidInputException(s"Invalid choice ($choice), select 1 or 2")
   }
 
   promptInput(inputPrompt)
-  val firstInput = readStringInput().toUpperCase
 
-  val input = readUntilValid(firstInput)
+  val input = readUntilValid(readStringInput().toUpperCase)
 
   val result = choice match {
     case 1 => translatorMtoE(input)
